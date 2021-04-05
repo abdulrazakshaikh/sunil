@@ -48,6 +48,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+.vbox-close{
+    font-size: 2.5rem !important;
+    width: 48px;
+    height: 48px;
+    color: red !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 20px;
+    top: 0;
+}
 /* Back to top button */
 .back-to-top {
   position: fixed;
@@ -180,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.7);
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding: 10px 0;
   top: 0px;
 }
 
@@ -337,8 +348,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: auto;
   left: -260px;
   width: 260px;
-  padding-top: 18px;
-  background: rgba(40, 38, 70, 0.8);
+  padding-top: 20px;
+  background: rgba(0, 0, 0, 0.8);
   transition: 0.4s;
 }
 
@@ -353,11 +364,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   color: #fff;
   padding: 10px 20px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #8dc2fa;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -398,12 +409,13 @@ h1, h2, h3, h4, h5, h6 {
   outline: none !important;
   line-height: 1;
   cursor: pointer;
-  text-align: right;
+  width: 64px;
+  margin: 15px 0px 0 0;
 }
 
 .mobile-nav-toggle i {
-  margin: 18px 18px 0 0;
-  color: #065e77;
+  /*margin: 18px 18px 0 0;*/
+  color: #000;
 }
 
 .mobile-nav-overly {
@@ -413,7 +425,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   position: fixed;
-  background: rgba(40, 38, 70, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   display: none;
 }
@@ -438,43 +450,72 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   position: relative;
   background: #f5f8fd url("../img/intro-bg01.jpg") center top no-repeat;
-  background-size: cover;
+  /*background-size: cover;*/
+  /*background: url('../img/banner.jpg') no-repeat center center / cover;*/
 }
 
-@media (max-width: 767px) {
-  #hero {
-    height: auto;
-    padding: 100px 0 60px 0;
-  }
-  #hero .container {
-    height: auto !important;
-  }
-  #hero .intro-img {
-    width: 80%;
-  }
+.banner{
+  height: 75vh;
+  background: url('https://wallpapercave.com/wp/wp2454355.jpg') no-repeat center center / cover;
+  /*background: url('https://images.pexels.com/photos/1070527/pexels-photo-1070527.jpeg') no-repeat center center / cover;*/
+  /*background: url('https://i.pinimg.com/originals/c4/1a/1c/c41a1cc247ec00baab6e163d032f879d.jpg') no-repeat center center / cover;*/
 }
-
-@media (min-width: 992px) {
-  #hero .intro-info {
-    padding-top: 80px;
-  }
+.banner .intro-info{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
-
-@media (max-width: 767px) {
-  #hero .intro-info {
-    text-align: center;
-    padding-top: 40px;
-  }
-}
-
-#hero .intro-info h2 {
+.banner .intro-info .banner-title{
   color: var(--color-darkprimary);
   margin-bottom: 40px;
   font-size: 48px;
   font-weight: 700;
+  margin: 0px;
+}
+.banner .intro-info .banner-title span{
+  color: var(--color-primary);
+  /*color: #d63b3b;*/
+  text-shadow: 2px 2px 0px rgb(72 61 47 / 63%);
+  font-weight: bold;
+}
+.banner .intro-info .banner-auth{
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0.5rem 0 1.5rem 0;
+}
+.banner .intro-info .btn-get-started{
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: var(--color-primary);
+  color: #fff;
+}
+.banner .intro-info .btn-get-started:hover{
+  background: var(--color-hoverprimary);
 }
 
-#hero .intro-info h2 span {
+#hero .intro-info h2{
+  color: var(--color-darkprimary);
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0px;
+}
+
+
+#hero .intro-info h2 span{
   color: var(--color-primary);
 }
 
@@ -503,6 +544,43 @@ h1, h2, h3, h4, h5, h6 {
 #hero .intro-info .btn-get-started:hover, #hero .intro-info .btn-services:hover {
   background: var(--color-hoverprimary);
 }
+
+
+
+@media (min-width: 992px) {
+  #hero .intro-info {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 767px) {
+  #hero {
+    height: auto;
+    padding: 100px 0 60px 0;
+  }
+  #hero .container {
+    height: auto !important;
+  }
+  #hero .intro-img {
+    width: 80%;
+  }
+  #hero .intro-info {
+    text-align: center;
+    padding-top: 40px;
+  }
+  .banner{
+    height: 70vh;
+  }
+  .banner .intro-info{
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0px;
+  }
+  .banner .intro-info .banner-title{
+    font-size: 34px;
+    text-align: center;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Sections
