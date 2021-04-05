@@ -49,7 +49,7 @@
 
   // Smooth scroll for the navigation and links with .scrollto classes
   var scrolltoOffset = $('#header').outerHeight() - 1;
-  $(document).on('click', '.main-nav a, .mobile-nav a, .scrollto', function(e) {
+  $(document).on('click', '.main-nav a, .mobile-nav a, .scrollto, .btn-get-started', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
